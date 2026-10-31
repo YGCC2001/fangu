@@ -1,0 +1,17 @@
+[
+  { "name": "30-statement-optional", "login": "user", "path": "/topic/8/statement" },
+  {
+    "name": "31-challenge-optional",
+    "login": "user",
+    "path": "/topic/8/statement",
+    "eval": "(async()=>{const h={'Content-Type':'application/json'};await fetch('/api/topics/8/stance',{method:'POST',headers:h,body:JSON.stringify({side:'b'})});await fetch('/api/topics/8/statement',{method:'POST',headers:h,body:JSON.stringify({content:''})});location.href='/topic/8/challenge';})()",
+    "wait2": 1800
+  },
+  {
+    "name": "32-free-empty-challenge",
+    "login": "user",
+    "path": "/topic/8/statement",
+    "eval": "(async()=>{const h={'Content-Type':'application/json'};const t=await (await fetch('/api/topics/8')).json();const p=(t.messages||[]).find(m=>m.side==='a');if(p){await fetch('/api/topics/8/challenge',{method:'POST',headers:h,body:JSON.stringify({message_id:p.id,content:''})});}location.href='/topic/8/free-debate';})()",
+    "wait2": 1800
+  }
+]

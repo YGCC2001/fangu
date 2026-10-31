@@ -1,0 +1,5 @@
+[
+  { "name": "40-about", "guest": true, "path": "/about", "wait": 1500 },
+  { "name": "41-about-mobile", "guest": true, "path": "/about", "mobile": true, "wait": 1500, "max": 5200 },
+  { "name": "42-about-hero", "guest": true, "path": "/about", "wait": 1500, "zoom": { "x": 0, "y": 0, "w": 1280, "h": 860, "scale": 1 } }
+]

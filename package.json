@@ -1,0 +1,18 @@
+{
+  "name": "fangu",
+  "version": "0.3.0",
+  "private": true,
+  "description": "反骨 — 每日辩题：参与者入口 + 运营入口（发布与审核）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check:api": "node scripts/e2e2.js",
+    "check:ui": "node scripts/ui-e2e.js",
+    "shots": "node scripts/shot.js",
+    "check:entry": "node scripts/e2e-entry.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

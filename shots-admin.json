@@ -1,0 +1,7 @@
+[
+  { "name": "20-admin-login", "guest": true, "path": "/login" },
+  { "name": "21-admin-publish", "login": "admin", "path": "/admin" },
+  { "name": "22-admin-review", "login": "admin", "path": "/admin?tab=review" },
+  { "name": "23-admin-conclusion", "login": "admin", "path": "/admin?tab=conclusion" },
+  { "name": "24-admin-review-mobile", "login": "admin", "path": "/admin?tab=review", "mobile": true }
+]

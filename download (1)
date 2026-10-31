@@ -1,0 +1,7 @@
+node_modules/
+data/
+shots/
+.workbuddy/
+*.log
+.DS_Store
+*.zip

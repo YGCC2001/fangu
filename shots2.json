@@ -1,0 +1,26 @@
+[
+  { "name": "01-home-guest", "guest": true, "path": "/" },
+  { "name": "02-home", "login": "user", "path": "/" },
+  { "name": "03-statement", "login": "user", "path": "/topic/8/statement" },
+  {
+    "name": "04-challenge",
+    "login": "user",
+    "path": "/topic/8/statement",
+    "eval": "(async()=>{const h={'Content-Type':'application/json'};await fetch('/api/topics/8/stance',{method:'POST',headers:h,body:JSON.stringify({side:'b'})});await fetch('/api/topics/8/statement',{method:'POST',headers:h,body:JSON.stringify({content:'如果道歉只是为了换取原谅，它就变成了一种交易。真正的歉意应该允许对方永不接受，而不因此被指责为记仇。'})});location.href='/topic/8/challenge';})()",
+    "wait2": 1800
+  },
+  {
+    "name": "05-free-debate",
+    "login": "user",
+    "path": "/topic/8/challenge",
+    "eval": "(async()=>{const h={'Content-Type':'application/json'};const d=await(await fetch('/api/topics/8')).json();const pid=d.push&&d.push.id;if(pid){await fetch('/api/topics/8/challenge',{method:'POST',headers:h,body:JSON.stringify({message_id:pid,content:'你说伤害没有被弥补时道歉仍然有效，但这句话恰恰把是否原谅的责任推回给了受伤的人。谁来判定伤害到底算不算被弥补？'})});}location.href='/topic/8/free-debate';})()",
+    "wait2": 1900
+  },
+  { "name": "06-conclusion", "login": "user", "path": "/topic/1/conclusion" },
+  { "name": "07-history", "login": "user", "path": "/history" },
+  { "name": "08-me", "login": "user", "path": "/me" },
+  { "name": "09-publish", "login": "admin", "path": "/admin/publish" },
+  { "name": "10-home-mobile", "login": "user", "path": "/", "mobile": true },
+  { "name": "11-free-debate-mobile", "login": "user", "path": "/topic/8/free-debate", "mobile": true },
+  { "name": "12-history-mobile", "login": "user", "path": "/history", "mobile": true }
+]

@@ -1,0 +1,6 @@
+node_modules
+data
+shots
+scripts
+data/*.json
+.github

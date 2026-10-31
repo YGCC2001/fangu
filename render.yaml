@@ -1,0 +1,20 @@
+# 反骨 · 每日辩题 —— Render Blueprint
+# 用法：仓库推到 GitHub → Render 里 New + Blueprint → 选这个仓库 → Apply
+# 说明：免费实例磁盘是临时的，重新部署会回到种子数据；要留数据见 DEPLOY.md「数据持久化」
+
+services:
+  - type: web
+    name: fangu
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install --omit=dev
+    startCommand: node server.js
+    healthCheckPath: /api/entry
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      # 托管平台只暴露一个端口，运营台不对外；需要时本机用 :3001
+      - key: ADMIN_PORT
+        value: "0"
